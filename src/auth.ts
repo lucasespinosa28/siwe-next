@@ -3,7 +3,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { getCsrfToken } from "next-auth/react";
 import { headers } from "next/headers";
 import { parseSiweMessage } from "viem/siwe";
-import { publicClient } from "./viem"; // Corrected this in the previous step
+import { publicClient } from "./app/viem";
 
 // The "declare module" block has been removed from here
 
@@ -90,5 +90,5 @@ export const {
   session: {
     strategy: "jwt",
   },
-  secret: process.env.AUTH_SECRET,
+  secret: process.env.NEXTAUTH_SECRET,
 });
